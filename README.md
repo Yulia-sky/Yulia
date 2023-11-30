@@ -13,6 +13,8 @@ jira, qase.io, postman, trello,soapui,sql, mackoon
    3. тестирование
    4. отчет о тестировании
   
+      
+  
   
    
 
