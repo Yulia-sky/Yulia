@@ -12,7 +12,8 @@ jira, qase.io, postman, trello,soapui,sql, mackoon
    2. тестовую документацию
    3. тестирование
    4. отчет о тестировании
-  
+
+  https://github.com/Yulia-sky/Yulia/commit/3b1ef5ad42d1cdc9cfe3ec98e65daf2e304f4321#commitcomment-133852030 
       
   
   
