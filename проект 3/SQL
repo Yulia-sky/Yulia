@@ -1,1 +1,62 @@
+Задание 1
+1.	Составьте запрос, который выведет имя вида с наименьшим id. Результат будет соответствовать букве «М»
+
+SELECT species_name FROM species ORDER BY species_id  LIMIT 1
+
+(малыш, мужчина)
+
+2.	Составьте запрос, который выведет имя вида с количеством представителей более 1800. Результат будет соответствовать букве «Б»
+select species_id, species_name, species_amount from species where species_amount > 1800;
+(роза)
+
+3.	Составьте запрос, который выведет имя вида, начинающегося на «п» и относящегося к типу с type_id = 5. Результат будет соответствовать букве «О»
+select species_id, species_name, species_amount, type_id from species where species_name like 'п%' and type_id = 5;
+(подсолнух)
+
+4.	Составьте запрос, который выведет имя вида, заканчивающегося на «са» или количество представителей которого равно 5. Результат будет соответствовать букве В
+select species_id, species_name, species_amount, type_id from species where species_name like '%са' and species_amount = 5;
+(лиса)
+
+Задание 2
+1.	Составьте запрос, который выведет имя вида, появившегося на учете в 2023 году. Результат будет соответствовать букве «Ы»
+select species_id, species_name, species_amount, type_id from species where date_start > '2023-01-01';
+select species_name, date_start from species where date_start > '2023-01-01';
+select species_name, type_id from species s inner join species_in_places s.p where date_start > '2023-01-01';
+(обезьяна)
+
+2.	Составьте запрос, который выведет названия отсутствующего (status = absent) вида, расположенного вместе с place_id = 3. Результат будет соответствовать букве «С»
+
+SELECT species_name  FROM species s JOIN species_in_places sip ON s.species_id =sip.species_id  WHERE sip.place_id = 3 AND s.species_status = 'absent';
+ (яблоко)
+
+3.	Составьте запрос, который выведет название вида, расположенного в доме и появившегося в мае, а также и количество представителей вида. Название вида будет соответствовать букве «П»
+SELECT s.species_name, s.species_amount FROM species s JOIN species_in_places sip  ON s.species_id = sip.species_id  JOIN places p on sip.place_id = p.place_id  WHERE to_char(s.date_start,'MM') = '05' AND p.place_name = 'дом'
+(собака)
+
+4.	Составьте запрос, который выведет название вида, состоящего из двух слов (содержит пробел). Результат будет соответствовать знаку !
+
+SELECT species_name FROM species WHERE species_name LIKE'% %'
+
+(голубая рыба)
+
+Задание 3
+1.	Составьте запрос, который выведет имя вида, появившегося с малышом в один день. Результат будет соответствовать букве «Ч»
+SELECT s1.species_name FROM species s1 join species s2  on s1.date_start = s2.date_start where s2.species_name = 'малыш' and s1.species_id  <> s2.species_id;
+ (кошка)
+2.	Составьте запрос, который выведет название вида, расположенного в здании с наибольшей площадью. Результат будет соответствовать букве «Ж»
+SELECT species_name, s.species_id, p.place_size, sip.place_id, p.place_name FROM species s
+JOIN species_in_places sip ON sip.species_id = s.species_id  JOIN places p ON p.place_id = sip.place_id
+WHERE p.place_name in('сарай','дом') ORDER BY p.place_size desc;
+(
+
+3.	Составьте запрос/запросы, которые найдут название вида, относящегося к 5-й по численности группе проживающего дома. Результат будет соответствовать букве «Ш»
+
+
+SELECT  species_name, date_start, species_amount  FROM species s  JOIN species_type st  ON s.type_id = st.type_id  JOIN species_in_places sip  ON s.species_id = sip.species_id JOIN places p  ON sip.place_id = p.place_id WHERE p.place_name = 'дом' and TO_CHAR (date_start, 'mm') = '05';
+(собака)
+
+4.	Составьте запрос, который выведет сказочный вид (статус fairy), не расположенный ни в одном месте. Результат будет соответствовать букве «Т»
+SELECT species_amount, species_name, species_status FROM species  WHERE species_status ='fairy';
+
+(единорог)
 
