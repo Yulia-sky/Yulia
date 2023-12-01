@@ -21,6 +21,9 @@ jira, qase.io, postman, trello,soapui,sql, mackoon
   1. коллеция API запросов, выполненных  в Postman
 
   3. SQL запросы, выполненные в pgAdmin4
+     Проект включает в себя:
+     1. SQL запросы
+     2. Расшифровку сектерного послания
      
       
   
