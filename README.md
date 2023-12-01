@@ -14,6 +14,11 @@ jira, qase.io, postman, trello,soapui,sql, mackoon
    4. отчет о тестировании
 
   https://github.com/Yulia-sky/Yulia/commit/3b1ef5ad42d1cdc9cfe3ec98e65daf2e304f4321#commitcomment-133852030 
+
+  
+  2. Тестирование кабинета учителя (является продолжением проекта "Тестирование вкладки "Расписание" сайта"
+  Проект включает в себя:
+  1. коллеция API запросов, выполненных  в Postman
       
   
   
