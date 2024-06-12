@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "9e51a5dc-1955-4ad1-90a3-cdcad3f70e14",
+		"name": "8 Аттестация 3х курсов",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29122293"
+	},
+	"item": [
+		{
+			"name": "Позитивные проверки",
+			"item": [
+				{
+					"name": "Город рождения Чита",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Yandex-API-Key",
+								"value": "dbeb5626-7c58-4a65-a7de-617e12b902b3",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}lat=52.047982&lon=113.476078&lang=ru_RU",
+							"host": [
+								"{{baseURL}}lat=52",
+								"047982&lon=113",
+								"476078&lang=ru_RU"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Штаб- квартира Яндекса Москва",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Yandex-API-Key",
+								"value": "dbeb5626-7c58-4a65-a7de-617e12b902b3",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}lat=55.7661&lon=37.64903&lang=ru_RU",
+							"host": [
+								"{{baseURL}}lat=55",
+								"7661&lon=37",
+								"64903&lang=ru_RU"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Штаб- квартира Гугл Маунтин Вью",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Yandex-API-Key",
+								"value": "dbeb5626-7c58-4a65-a7de-617e12b902b3",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}lat=37.406489&lon=-122.089167&lang=ru_RU",
+							"host": [
+								"{{baseURL}}lat=37",
+								"406489&lon=-122",
+								"089167&lang=ru_RU"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Негативные проверки",
+			"item": [
+				{
+					"name": "Город рождения Чита без широты",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Yandex-API-Key",
+								"value": "dbeb5626-7c58-4a65-a7de-617e12b902b3",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}lon=113.476078&lang=ru_RU",
+							"host": [
+								"{{baseURL}}lon=113",
+								"476078&lang=ru_RU"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Город рождения Чита без долготы",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Yandex-API-Key",
+								"value": "dbeb5626-7c58-4a65-a7de-617e12b902b3",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}lat=52.047982&lang=ru_RU",
+							"host": [
+								"{{baseURL}}lat=52",
+								"047982&lang=ru_RU"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Город рождения Чита без координат",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Yandex-API-Key",
+								"value": "dbeb5626-7c58-4a65-a7de-617e12b902b3",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}ru_RU",
+							"host": [
+								"{{baseURL}}ru_RU"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Город рождения Чита с некорректными координатами",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Yandex-API-Key",
+								"value": "dbeb5626-7c58-4a65-a7de-617e12b902b3",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}lat=55.7661&lon=-122.089167&lang=ru_RU",
+							"host": [
+								"{{baseURL}}lat=55",
+								"7661&lon=-122",
+								"089167&lang=ru_RU"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Город рождения Чита без API ключа",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}lat=52.047982&lon=113.476078&lang=ru_RU",
+							"host": [
+								"{{baseURL}}lat=52",
+								"047982&lon=113",
+								"476078&lang=ru_RU"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Город рождения Чита с некорректным API ключом",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Yandex-API-Key",
+								"value": "dbeb56267c584a65a7de617e12b902b3",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}lat=52.047982&lon=113.476078&lang=ru_RU",
+							"host": [
+								"{{baseURL}}lat=52",
+								"047982&lon=113",
+								"476078&lang=ru_RU"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://api.weather.yandex.ru/v2/forecast?",
+			"type": "string"
+		},
+		{
+			"key": "X-Yandex-API-Key",
+			"value": "dbeb5626-7c58-4a65-a7de-617e12b902b3",
+			"type": "string"
+		}
+	]
+}
