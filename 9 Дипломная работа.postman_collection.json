@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "1dd07ce0-e70b-4637-a8fa-3ea3c1cb6ff5",
+		"name": "9 Дипломная работа",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29122293"
+	},
+	"item": [
+		{
+			"name": "Получение доступа к разделу \"Видеопрактика\" без token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api-vimbox.skyeng.ru/api/v1/compilations/showcase",
+					"protocol": "https",
+					"host": [
+						"api-vimbox",
+						"skyeng",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"compilations",
+						"showcase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение доступа к разделу \"Видеопрактика\" token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api-vimbox.skyeng.ru/api/v1/compilations/showcase",
+					"protocol": "https",
+					"host": [
+						"api-vimbox",
+						"skyeng",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"compilations",
+						"showcase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение доступа к разделу \"Видеопрактика\" c некорректным адресом",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"{{global token}}\",\r\n    \"name\": \"15901180\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-vimbox.skyeng.ru/api/v1/compilations/showcase",
+					"protocol": "https",
+					"host": [
+						"api-vimbox",
+						"skyeng",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"compilations",
+						"showcase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение доступа к разделу \"Видеопрактика\" c избранными видео",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api-vimbox.skyeng.ru/api/v1/compilations/bookmarks/",
+					"protocol": "https",
+					"host": [
+						"api-vimbox",
+						"skyeng",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"compilations",
+						"bookmarks",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0NTk2OTMzLCJpZGVudGl0eSI6InRlc3QudHN0MzE3QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDMxN0Bza3llbmcucnUiLCJpZGVudGl0eVBob25lIjoiKzc5OTk1NTUzMzEwIiwibmFtZSI6Ilx1MDQxOFx1MDQzM1x1MDQzZVx1MDQ0MFx1MDQ0YyIsInN1cm5hbWUiOiJcdTA0MTJcdTA0MzhcdTA0NDBcdTA0NDdcdTA0MzhcdTA0M2EiLCJlbWFpbCI6InRlc3QudHN0MzE3QHNreWVuZy5ydSIsInVpTGFuZ3VhZ2UiOiJydSIsImxvY2FsZSI6InJ1Iiwic2VydmljZUxvY2FsZSI6bnVsbCwidWFzIjozMCwiand0VHlwZSI6MSwianRpIjoiTmhlY3dKTktYZkM0aXNETWc3NXg3SEkxU01xZWZvSlciLCJicmFuZCI6bnVsbCwiZXhwIjoxNzA5NzYxOTAzLCJhdmF0YXJVcmwiOiJodHRwczpcL1wvYXV0aC1hdmF0YXJzLXNreWVuZy5pbWdpeC5uZXRcLzE0NTk2OTMzXC85OGY2YmViNS1mMDdiLTQxZWItOGJjMi00NTcxNDBhNzQ4ODM_YXV0bz1mb3JtYXQlMkNlbmhhbmNlJmZpdD1jcm9wJmg9MjAwJml4bGliPXBocC0yLjEuMSZxPTc1JnNhdD04JnNoYXJwPTEwJnZpYj04Jnc9MjAwIiwiYmlydGhkYXkiOiIxOTcwLTEyLTMxIiwiYUlzU3Ryb25nIjp0cnVlLCJhVHlwZSI6IlVTRVJOQU1FX1BBU1NXT1JEIiwiYVRpbWUiOjE3MDg5MzY1MjgsInJvbGVzIjpbIlJPTEVfVEVBQ0hFUl9DQU5ESURBVEUiLCJST0xFX1RFQUNIRVJfQ0FORElEQVRFX0JBU0VfQUNDRVNTIiwiUk9MRV9UVENfVVNBR0UiLCJST0xFX1ZJTUJPWF9URUFDSEVSX1VTQUdFIiwiUk9MRV9URUFDSEVSIiwiUk9MRV9DUk0yX1RFQUNIRVJfQUNDRVNTIiwiUk9MRV9NQVRIX1RFQUNIRVIiLCJST0xFX01BVEhfQ09OVEVOVF9USEVNRV9WSUVXIl19.C50fOCXhD8bkU0bvSCoiG5Qsa7N1wBpqLFGg2G3C14iZi0eIQ3eVt95azHpxVmBI-xJshLfvXKtbXWSDgDWiuAMkEsAkulRVgnBhdirDAOvv5GgxpRfTfLjIhGzvb30hsfnaHOuiAMOldO_Dht9XYtUlSy1_2k04OE5PYHIAAyUysbnnL-x2VyPXcSyaJag4_mMUCBAQnEFgo9EqpY4lrOzg-w2XzlA918QQ0OvY4Ey-46GerHQvD58TDW6AcIn6jZyUF8C6EmoFEyYMaDHnZLd4Bi6o6kuYOraj-dRhPVeyS8-bJ_E65RI8Fw36zV3OWyY59C_jiYVNlxRRAVZ8mBSZTjysXfFmEOnk0_H4jqdI6FDnOtNrkIrW7hrGnS1MB5_vB5oe1SZxfoT3Ks7Gok5Y75R0EQeea_6njNuXbxFsFyp2Dom6A2CslavBgYA0TW1M1eWWVqbrmNwCB2f4nKZQ6A4Q-6mW7QvPVOJvmaT4wttWPjkybzieoMI4sn3VjmjjUGdEnnvr1d2pMygvT-ji75txPRBTBp5I1OBysx26F33DZ6QTXa2YUqN_tSnBfcmXpMZ4ZO1mQVs1fHrh6J13X_aKXc95I72hwEb-DUqYnP3eJOIOT3ciMQV4pJNGrbFL6pli8USfRgZC1dcUo3m9kd_k9C9GPz_hDpAZ-Fg",
+			"type": "string"
+		}
+	]
+}
